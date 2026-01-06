@@ -1,16 +1,15 @@
 public class Condicional {
-    static void main() {
-        int year = 2022;
-        boolean inPlan = false;
-        double score = 8.1;
-        String typePlan = "normal";
+    public static void main(String[] args) {
+        int year = 1986;
+        boolean inPlan = true;
+        String planType = "plus";
 
-        if(year >= 2025) {
-            System.out.println("Lançamento que os clientes estão curtindo!");
+        if (year >= 2022) {
+            System.out.println("New one enjoyed by clients!");
         } else {
-            System.out.println("Retrô que vale a pena assistir!");
+            System.out.println("Old one that worth it!");
         }
 
-        System.out.println(inPlan || typePlan.equals("plus")? "Filme liberado" : "Deve pagar a locação");
+        System.out.println(inPlan || planType.equals("plus")? "Movie available to watch" : "Movie not available with your plan");
     }
 }
