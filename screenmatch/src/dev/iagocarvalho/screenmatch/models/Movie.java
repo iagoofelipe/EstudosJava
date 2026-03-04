@@ -1,30 +1,17 @@
 package dev.iagocarvalho.screenmatch.models;
 
-public class Movie {
-    private String name;
-    private int releaseYear;
-    private boolean inPlan;
-    private double sumRatings;
-    private int numRatings;
-    private int durationInMinutes;
+import dev.iagocarvalho.screenmatch.calculation.IClassifiable;
 
-    public Movie(String name, int releaseYear, boolean inPlan, int durationInMinutes) {
+public class Movie extends Title implements IClassifiable {
+
+    public Movie(String name, int releaseYear, int durationMinutes) {
         this.name = name;
         this.releaseYear = releaseYear;
-        this.inPlan = inPlan;
-        this.durationInMinutes = durationInMinutes;
+        this.durationMinutes = durationMinutes;
     }
 
-    public void showDetails() {
-        System.out.printf("Movie %s with %.2f of rating evaluated by %d users", this.name, this.getRatingsAverage(), this.numRatings);
-    }
-
-    public void rate(double rating) {
-        numRatings++;
-        sumRatings += rating;
-    }
-
-    public double getRatingsAverage() {
-        return sumRatings / numRatings;
+    @Override
+    public int getClassification() {
+        return (int) getRatingAverage() / 2;
     }
 }

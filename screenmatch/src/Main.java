@@ -3,11 +3,8 @@ import dev.iagocarvalho.screenmatch.models.Movie;
 import dev.iagocarvalho.screenmatch.models.Series;
 
 public class Main {
-    static void main() {
-        Movie movie = new Movie();
-        movie.setName("Me before you");
-        movie.setReleaseYear(2016);
-        movie.setDurationMinutes(110);
+    public static void main(String[] args) {
+        Movie movie = new Movie("Me before you", 2016, 110);
         movie.rate(8.9);
         movie.rate(7.5);
         movie.rate(9.3);
@@ -22,15 +19,13 @@ public class Main {
 
         lost.showDetails();
 
-        Movie otherMovie = new Movie();
-        otherMovie.setName("Avatar");
-        otherMovie.setReleaseYear(2023);
-        otherMovie.setDurationMinutes(200);
+        Movie otherMovie = new Movie("Avatar", 2023, 200);
 
         TimeCalculator calculator = new TimeCalculator();
         calculator.add(movie);
         calculator.add(lost);
         calculator.add(otherMovie);
+        
         calculator.showDetails();
     }
 }

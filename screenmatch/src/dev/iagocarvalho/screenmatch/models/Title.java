@@ -1,11 +1,11 @@
 package dev.iagocarvalho.screenmatch.models;
 
 public class Title {
-    private String name;
-    private int releaseYear;
-    private double sumRating;
-    private int numRatings;
-    private int durationMinutes;
+    protected String name;
+    protected int releaseYear;
+    protected double sumRating;
+    protected int numRatings;
+    protected int durationMinutes;
 
     public String getName() {
         return name;
